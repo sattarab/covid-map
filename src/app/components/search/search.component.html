@@ -1,0 +1,15 @@
+<form class="search-form">
+  <mat-form-field class="search-form-field" appearance="fill">
+    <input class="searc-form-input"
+           type="text"
+           placeholder="Search By Country Name"
+           [formControl]="searchControl"
+           matInput
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
